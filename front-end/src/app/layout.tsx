@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fundraising Campaign",
+  title: "OceanSave - Blockchain Ocean Cleanup",
   description:
-    "A crypto fundraising campaign accepting donations in STX & sBTC.",
+    "Support ocean cleanup through blockchain technology. Remove plastic, save marine life, protect our oceans.",
 };
 
 export default function RootLayout({

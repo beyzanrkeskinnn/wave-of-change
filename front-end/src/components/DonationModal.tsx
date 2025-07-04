@@ -125,12 +125,15 @@ export default function DonationModal({
 
       const doSuccessToast = (txid: string) => {
         toast({
-          title: "Thank you!",
+          title: "🐠 Thank you for saving our oceans!",
           description: (
             <Flex direction="column" gap="4">
-              <Box>Processing donation of ${amount}.</Box>
+              <Box>Processing your ${amount} donation to protect marine life.</Box>
               <Box fontSize="xs">
                 Transaction ID: <strong>{txid}</strong>
+              </Box>
+              <Box fontSize="sm" fontStyle="italic" color="seafoam.600">
+                "I just supported ocean cleanup! Join me in saving marine life 🌊🐠"
               </Box>
             </Flex>
           ),
@@ -179,7 +182,9 @@ export default function DonationModal({
     <Modal isOpen={isOpen} onClose={onClose} size="full">
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Make a Contribution</ModalHeader>
+        <ModalHeader bg="ocean.500" color="white" borderTopRadius="md">
+          🌊 Support Ocean Cleanup
+        </ModalHeader>
         <ModalCloseButton />
         <ModalBody pb="8">
           <Flex direction="column" gap="3">
@@ -193,7 +198,7 @@ export default function DonationModal({
                 direction="column"
                 gap="4"
               >
-                <Box>Please connect a STX wallet to make a contribution.</Box>
+                <Box>Please connect a STX wallet to support ocean cleanup.</Box>
                 {isDevnetEnvironment() ? (
                   <DevnetWalletButton
                     currentWallet={devnetWallet}
@@ -293,7 +298,7 @@ export default function DonationModal({
                         }
                         isLoading={isLoading}
                       >
-                        Donate ${selectedAmount || customAmount || "0"}
+                        🌊 Donate ${selectedAmount || customAmount || "0"} to Save Oceans
                       </Button>
                       <Box mx="auto" fontSize="sm" fontWeight="bold">
                         (≈
@@ -309,6 +314,51 @@ export default function DonationModal({
                         )
                       </Box>
                     </Flex>
+
+                    {/* Ocean Impact Calculator */}
+                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-4 rounded-lg mb-6">
+                      <h4 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                        🌊 Your Impact Calculation
+                      </h4>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <span className="font-medium">Plastic Removal:</span>
+                          <div className="text-blue-600">
+                            {Math.round(
+                              (selectedAmount || Number(customAmount)) * 50
+                            )}{" "}
+                            pounds
+                          </div>
+                        </div>
+                        <div>
+                          <span className="font-medium">Marine Animals Protected:</span>
+                          <div className="text-cyan-600">
+                            {Math.round(
+                              (selectedAmount || Number(customAmount)) * 2
+                            )}{" "}
+                            species
+                          </div>
+                        </div>
+                        <div>
+                          <span className="font-medium">Coastline Cleaned:</span>
+                          <div className="text-blue-600">
+                            {Math.round(
+                              (selectedAmount || Number(customAmount)) * 0.1
+                            )}{" "}
+                            miles
+                          </div>
+                        </div>
+                        <div>
+                          <span className="font-medium">Community Impact:</span>
+                          <div className="text-cyan-600">
+                            {Math.round(
+                              (selectedAmount || Number(customAmount)) * 10
+                            )}{" "}
+                            people
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </VStack>
                 </Box>
               </>
