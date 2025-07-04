@@ -13,164 +13,164 @@
 
 </div>
 
-## 🎯 Proje Hakkında
+## 🎯 About the Project
 
-Save Our Oceans Initiative, blockchain teknolojisi kullanarak okyanuslarımızı temizleme misyonunu destekleyen merkezi olmayan bir bağış toplama platformudur. Bu proje, Stacks blockchain üzerinde Clarity smart contract'ları kullanarak şeffaf ve güvenli bağış süreçleri sağlar.
+Save Our Oceans Initiative is a decentralized fundraising platform that supports ocean cleanup missions using blockchain technology. This project leverages Clarity smart contracts on the Stacks blockchain to provide transparent and secure donation processes.
 
-### 🌟 Temel Özellikler
+### 🌟 Key Features
 
-- **🔒 Blockchain Güvenliği**: Stacks blockchain üzerinde Clarity smart contract'ları
-- **🌊 Okyanus Teması**: Tamamen denizcilik temalı kullanıcı arayüzü
-- **📊 Gerçek Zamanlı İzleme**: Temizlik ilerlemesi ve deniz yaşamı koruma takibi
-- **🗺️ İnteraktif Harita**: Küresel temizlik operasyonlarının görselleştirilmesi
-- **💰 Milestone Tabanlı Fonlama**: Hedef bazlı bağış kilidinin açılması
-- **📱 Responsive Tasarım**: Mobil-öncelikli ocean temalı arayüz
-- **🔄 Real-time Updates**: Anlık bağış ve ilerleme güncellemeleri
+- **🔒 Blockchain Security**: Clarity smart contracts on Stacks blockchain
+- **🌊 Ocean Theme**: Fully marine-themed user interface
+- **📊 Real-time Tracking**: Cleanup progress and marine life protection monitoring
+- **🗺️ Interactive Map**: Global cleanup operations visualization
+- **💰 Milestone-based Funding**: Target-based donation unlocking system
+- **📱 Responsive Design**: Mobile-first ocean-themed interface
+- **🔄 Real-time Updates**: Live donation and progress updates
 
-### 📊 Ocean Dashboard Bileşenleri
+### 📊 Ocean Dashboard Components
 
-- **🗺️ Cleanup Map**: Küresel temizlik lokasyonlarının interaktif haritası
-- **🐠 Marine Life Counter**: Korunan tür sayısı ve animasyonlu sayaçlar
-- **📸 Photo Gallery**: Önce/sonra karşılaştırmalı galeri
-- **📊 Pollution Tracker**: Tip bazında plastik temizleme istatistikleri
+- **🗺️ Cleanup Map**: Interactive map of global cleanup locations
+- **🐠 Marine Life Counter**: Protected species count with animated counters
+- **📸 Photo Gallery**: Before/after comparison gallery
+- **📊 Pollution Tracker**: Plastic cleanup statistics by type
 
-## 🎯 Fonlama Hedefleri
+## 🎯 Funding Goals
 
-| Milestone | Tutar | Amaç |
-|-----------|-------|------|
-| **25%** | $12,500 STX | Temizlik Ekipmanları & İlk Operasyonlar |
-| **50%** | $25,000 STX | Gelişmiş Teknoloji Dağıtımı |
-| **75%** | $37,500 STX | Deniz Yaşamı Koruma Programları |
-| **100%** | $50,000 STX | Tam Kapsamlı Operasyonlar & Toplum Genişlemesi |
+| Milestone | Amount | Purpose |
+|-----------|--------|---------|
+| **25%** | $12,500 STX | Cleanup Equipment & Initial Operations |
+| **50%** | $25,000 STX | Advanced Technology Deployment |
+| **75%** | $37,500 STX | Marine Life Protection Programs |
+| **100%** | $50,000 STX | Full-scale Operations & Community Expansion |
 
-*Bu eğitim amaçlı örnek bir uygulamadır. Sağlanan smart contract'lar audit edilmemiştir.*
+*This is an educational example application. The provided smart contracts have not been audited.*
 
 ## 🚀 Development
 
-Ocean cleanup platformunu Stacks Devnet (özel geliştirme blockchain ortamı) ile çalıştırmak için şu adımları izleyin:
+To run the ocean cleanup platform with Stacks Devnet (private development blockchain environment), follow these steps:
 
-### 🔧 Ön Gereksinimler
+### 🔧 Prerequisites
 
 - **Node.js** v18+ 
-- **npm** veya **yarn**
+- **npm** or **yarn**
 - **Clarinet** (Clarity development)
-- **Hiro Wallet** (test için)
+- **Hiro Wallet** (for testing)
 
-### 1. **Hiro Platform'da Devnet Başlatma**
+### 1. **Start Devnet in Hiro Platform**
 
-   - [Hiro Platform](https://platform.hiro.so)'a giriş yapın
-   - Projenize gidin ve Devnet'i başlatın (deployment plan güncellemesi önerisi gelirse, proje önceden yapılandırılmış olduğu için güncellemeyin)
-   - API anahtarınızı kopyalayın:
-     - Devnet Stacks API URL'sinden: `https://api.platform.hiro.so/v1/ext/<YOUR-API-KEY>/stacks-blockchain-api`
-     - Veya https://platform.hiro.so/settings/api-keys adresinden
+   - Log into the [Hiro Platform](https://platform.hiro.so)
+   - Navigate to your project and start Devnet (do not opt to update the Devnet deployment plan, as it's pre-configured with some contract calls to initialize the project)
+   - Copy your API key from either:
+     - The Devnet Stacks API URL: `https://api.platform.hiro.so/v1/ext/<YOUR-API-KEY>/stacks-blockchain-api`
+     - Or from https://platform.hiro.so/settings/api-keys
 
-### 2. **Yerel Ortam Konfigürasyonu**
+### 2. **Local Environment Configuration**
 
-**Backend bağımlılıklarını kurun:**
+**Install backend dependencies:**
 ```bash
 cd clarity
 npm install
 ```
 
-**Frontend bağımlılıklarını kurun:**
+**Install frontend dependencies:**
 ```bash
 cd ../front-end
 npm install
 ```
 
 
-**Environment dosyası oluşturun:**
+**Create environment file:**
 ```bash
 cp front-end/.env.example front-end/.env
 ```
 
-**Hiro Platform API anahtarınızı `front-end/.env` dosyasına ekleyin:**
+**Add your Hiro Platform API key to the `front-end/.env` file:**
 ```bash
 NEXT_PUBLIC_PLATFORM_HIRO_API_KEY=your-api-key-here
 ```
 
-### 3. **Ocean Cleanup Uygulamasını Başlatma**
+### 3. **Launch Ocean Cleanup Application**
 
-**Smart contract'ları test edin:**
+**Test smart contracts:**
 ```bash
 cd clarity
 npm test
 ```
 
-**Next.js uygulamasını front-end dizininden başlatın:**
+**Start the Next.js application from the front-end directory:**
 ```bash
 cd ../front-end
 npm run dev
 ```
 
-**Tarayıcıda görüntüleyin:** `http://localhost:3000` adresine giderek ocean cleanup platformu ile etkileşim kurun. Devnet çalışıyorsa, test cüzdanlarınız zaten fonlanmış ve test için bağlanmış olacaktır.
+**View in browser:** Navigate to `http://localhost:3000` to interact with the ocean cleanup platform. If Devnet is running, your test wallets will already be funded and connected for testing.
 
-## 🎨 Ocean Teması Özelleştirmesi
+## 🎨 Ocean Theme Customization
 
-Ocean cleanup kampanyanızı özelleştirmek için şu dosyaları düzenleyin:
+To customize your ocean cleanup campaign, edit the following files:
 
-### 🌊 Renk Paleti & Tema
-- **Ocean Blue**: `#0077BE` - Ana mavi ton
-- **Seafoam Green**: `#20B2AA` - Deniz köpüğü yeşili  
-- **Coral**: `#FF7F50` - Mercan turuncu
-- **Deep Sea**: `#003366` - Derin deniz mavisi
+### 🌊 Color Palette & Theme
+- **Ocean Blue**: `#0077BE` - Primary blue tone
+- **Seafoam Green**: `#20B2AA` - Sea foam green  
+- **Coral**: `#FF7F50` - Coral orange
+- **Deep Sea**: `#003366` - Deep sea blue
 
-### 📁 Özelleştirilebilir Dosyalar
+### 📁 Customizable Files
 
-- **`front-end/src/constants/campaign.ts`** - Kampanya başlığı ve alt başlık
-- **`front-end/public/campaign-details.md`** - Kampanya açıklama içeriği
-- **`front-end/public/campaign/`** - Ocean cleanup operasyon görselleri
-- **`front-end/src/theme.ts`** - Ocean teması renk konfigürasyonu
-- **`front-end/src/app/globals.css`** - Dalga animasyonları ve ocean efektleri
+- **`front-end/src/constants/campaign.ts`** - Campaign title and subtitle
+- **`front-end/public/campaign-details.md`** - Campaign description content
+- **`front-end/public/campaign/`** - Ocean cleanup operation images
+- **`front-end/src/theme.ts`** - Ocean theme color configuration
+- **`front-end/src/app/globals.css`** - Wave animations and ocean effects
 
-### 🏗️ Proje Yapısı
+### 🏗️ Project Structure
 
 ```
 wave-of-change/
-├── clarity/                    # Smart contract'lar
+├── clarity/                    # Smart contracts
 │   ├── contracts/
-│   │   └── fundraising.clar   # Ana fonlama contract'ı
+│   │   └── fundraising.clar   # Main fundraising contract
 │   ├── tests/
-│   │   └── fundraising.test.ts # Contract testleri
-│   └── deployments/           # Deployment konfigürasyonları
+│   │   └── fundraising.test.ts # Contract tests
+│   └── deployments/           # Deployment configurations
 ├── front-end/                 # Next.js frontend
 │   ├── src/
-│   │   ├── components/        # React bileşenleri
-│   │   │   ├── CleanupMap.tsx      # İnteraktif temizlik haritası
-│   │   │   ├── MarineLifeCounter.tsx # Deniz yaşamı sayacı
-│   │   │   ├── PhotoGallery.tsx     # Önce/sonra galerisi
-│   │   │   ├── PollutionTracker.tsx # Kirlilik takip sistemi
-│   │   │   └── CampaignDetails.tsx  # Ana kampanya arayüzü
+│   │   ├── components/        # React components
+│   │   │   ├── CleanupMap.tsx      # Interactive cleanup map
+│   │   │   ├── MarineLifeCounter.tsx # Marine life counter
+│   │   │   ├── PhotoGallery.tsx     # Before/after gallery
+│   │   │   ├── PollutionTracker.tsx # Pollution tracking system
+│   │   │   └── CampaignDetails.tsx  # Main campaign interface
 │   │   ├── hooks/            # Custom React hooks
-│   │   ├── lib/              # Utility fonksiyonları
-│   │   └── theme.ts          # Ocean teması konfigürasyonu
+│   │   ├── lib/              # Utility functions
+│   │   └── theme.ts          # Ocean theme configuration
 │   └── public/
-│       ├── campaign-details.md     # Kampanya açıklaması
-│       └── campaign/              # Ocean cleanup görselleri
+│       ├── campaign-details.md     # Campaign description
+│       └── campaign/              # Ocean cleanup images
 └── README.md
 ```
 
-Verilen Devnet deployment planı (`clarity/deployments/default.devnet-plan.yaml`) belirli bir fonlama hedefi ile kampanyayı başlatmak için adımlar içerir. Bu planı istediğiniz gibi özelleştirebilirsiniz.
+The provided Devnet deployment plan (`clarity/deployments/default.devnet-plan.yaml`) includes steps to initialize the campaign with a specific funding goal. You can customize this plan as desired.
 
-Testnet veya Mainnet'e deploy etmeye hazır olduğunuzda, testnet/mainnet deployment planlarınıza benzer adımlar eklemeyi seçebilir veya `fundraising.initialize-campaign` fonksiyonunu on-chain manuel olarak çağırarak kampanyanızı başlatabilirsiniz.
+When you're ready to deploy to Testnet or Mainnet, you can choose to add similar steps to your testnet/mainnet deployment plans, or you can initialize your campaign manually by calling the `fundraising.initialize-campaign` function on-chain.
 
-## 🔗 Smart Contract'lar Hakkında
+## 🔗 About the Smart Contracts
 
-Bu uygulama, fon toplama işlemlerini yöneten Clarity smart contract'ı kullanır.
+This application uses a Clarity smart contract that handles fund collection.
 
 ### `fundraising.clar`
 
-- Contract owner'ın kampanyayı USD cinsinden fonlama hedefi ile başlatmasına izin verir
-- STX veya sBTC cinsinden bağışları kabul eder
-- Bireysel katkıları takip eder
-- Hedef tutarına ulaşılırsa, yararlanıcının (contract owner) toplanan fonları çekmesine izin verir
-- Yararlanıcının herhangi bir noktada kampanyayı iptal etmesine ve katkıları bağışçılara iade etmesine izin verir
+- Allows the contract owner to initialize the campaign with a fundraising goal in USD
+- Accepts donations in STX or sBTC
+- Tracks individual contributions
+- Lets the beneficiary (contract owner) withdraw the raised funds if the goal is hit
+- Allows the beneficiary to cancel the campaign and refund the contributions to the donors at any point
 
 ### 🌊 Ocean-Themed Features
 
-#### Smart Contract Özellikleri
+#### Smart Contract Functions
 ```clarity
-;; Ana fonksiyonlar
+;; Main functions
 (define-public (donate (amount uint)))
 (define-public (withdraw-funds (amount uint)))
 (define-read-only (get-campaign-info))
@@ -178,85 +178,85 @@ Bu uygulama, fon toplama işlemlerini yöneten Clarity smart contract'ı kullan�
 ```
 
 #### Ocean Dashboard Components
-- **🗺️ CleanupMap**: 5 okyanus bölgesinde gerçek zamanlı temizlik ilerlemesi
-- **🐠 MarineLifeCounter**: 15 korunan deniz türü sayacı
-- **📸 PhotoGallery**: Swipeable önce/sonra galeri
-- **📊 PollutionTracker**: Plastik türü bazında temizlik istatistikleri
+- **🗺️ CleanupMap**: Real-time cleanup progress in 5 ocean regions
+- **🐠 MarineLifeCounter**: 15 protected marine species counter
+- **📸 PhotoGallery**: Swipeable before/after gallery
+- **📊 PollutionTracker**: Plastic removal statistics by type
 
-## 🧪 Devnet ile Test Etme
+## 🧪 Testing with Devnet
 
-Hiro Platform'un Devnet'i, dApp'lerinizi testnet veya mainnet'e deploy etmeden önce test etmek için sandbox edilmiş, kişisel blockchain ortamıdır. Her yeni Devnet başlattığınızda, blockchain durumu sıfırlanır ve proje contract'larınız sıfırdan deploy edilir.
+The Hiro Platform's Devnet is a sandboxed, personal blockchain environment for testing your dApps before deploying them to the testnet or mainnet. Each time you start a new Devnet, it will reset the blockchain state and deploy your project contracts from scratch.
 
-Bu özellik yararlıdır çünkü blockchain'e deploymentlar kalıcıdır ve geri alınamaz. Contract'larınızı Testnet veya Mainnet'e yükseltmeden önce Devnet'te kapsamlı bir şekilde test ettiğinizden emin olun.
+This is useful because deployments to the blockchain are permanent and cannot be undone. Ensure you have tested your contracts thoroughly in your Devnet before promoting them to Testnet or Mainnet.
 
-Contract'ınızda değişiklik yaparsanız, contract değişikliklerinin Devnet'te görünmesi için değişikliklerinizi push etmeniz ve Devnet'i yeniden başlatmanız gerekir.
+If you make changes to your contract, you will need to push your changes and restart Devnet for the contract changes to appear in your Devnet.
 
-### 1. Devnet Başlatma ve Contract Deploy Etme
+### 1. Start Devnet and Deploy Contracts
 
-1. Projenizi Hiro Platform'da açın
-2. Test ortamınızı başlatmak için "Start Devnet"e tıklayın (contract'lar deployment planınıza göre otomatik olarak deploy edilecektir)
-3. Contract'larınızın Devnet dashboard'unda en geç 45. blokta deploy edildiğini görmelisiniz
+1. Open your project in the Hiro Platform
+2. Click "Start Devnet" to initialize your testing environment (the contracts will be automatically deployed per your deployment plan)
+3. You should see your contracts deployed no later than block 45 in the Devnet dashboard
 
-### 2. Smart Contract Fonksiyonlarını Test Etme
+### 2. Testing Smart Contract Functions
 
-Smart contract fonksiyonları doğrudan Platform dashboard'unuzdan test edilebilir.
+Smart contract functions can be tested directly from your Platform dashboard.
 
-1. Contract'larınızın deploy edildiğini ve Devnet'in çalıştığını onaylamak için Devnet sekmesini seçin
-2. "Interact with Devnet"e ve ardından "Call functions"a tıklayın
-3. Dropdown menülerden contract'ınızı ve test etmek istediğiniz fonksiyonu seçin
-4. Çağırıcı olarak önceden fonlanmış devnet cüzdanlarından birini ve (gerekirse) alıcı olarak başka birini kullanın
-5. Fonksiyonu çalıştırmak için "Call function"a tıklayın; fonksiyon logic'i ve çağırıcının izinlerine bağlı olarak başarılı olacak veya başarısız olacaktır
-6. Fonksiyon submit edildikten sonra, transaction'ın Devnet dashboard'unda on-chain çözülmesini izleyebilir ve fonksiyonun beklendiği gibi çalıştığını onaylayabilirsiniz
+1. Select the Devnet tab to confirm that your contracts are deployed and Devnet is running
+2. Click "Interact with Devnet" and then "Call functions"
+3. Select your contract and the function you want to test from the dropdown menus
+4. Use one of the pre-funded devnet wallets as the caller and another as the recipient (if needed)
+5. Click "Call function" to execute the function, which will either succeed or fail based on the function's logic and the caller's permissions
+6. Once the function has been submitted, you can watch for the transaction to resolve on-chain in the Devnet dashboard and confirm that the function executed as expected
 
-Contract'larda yapılan herhangi bir değişikliğin Devnet'i yeniden başlatmayı ve contract'ları yeniden deploy etmeyi gerektirdiğini unutmayın.
+Remember that any changes to the contracts will require restarting Devnet and redeploying the contracts.
 
-### 3. Ocean Cleanup Entegrasyon Testi
+### 3. Ocean Cleanup Integration Testing
 
-Devnet çalışırken, front-end fonksiyonalitelerinizi test edebilir ve ocean cleanup fonksiyonlarını test ettiğiniz şekilde çalıştığını doğrulayabilirsiniz.
+With Devnet running, you can test your front-end functionality and validate that it's working in the same way you just tested the ocean cleanup functions.
 
-1. Platform dashboard'unda Devnet'inizin çalıştığını ve front-end dizininde `npm run dev`'in çalıştığını onaylayın
-2. Ocean cleanup uygulamasını görüntülemek ve etkileşim kurmak için [http://localhost:3000](http://localhost:3000) adresine gidin
-3. Önceden fonlanmış cüzdanları kullanarak bağış, iade ve çekme fonksiyonalitelerini test edin. Farklı test cüzdanları arasında seçim yapmak için sağ üst köşedeki cüzdan seçiciyi kullanın
-4. Transaction'lar submit edilip on-chain çözülürken bunları görüntülemek için Platform'daki Devnet dashboard'una gidin
+1. Confirm that your Devnet is running in the Platform dashboard and `npm run dev` is running in the front-end directory
+2. Navigate to [http://localhost:3000](http://localhost:3000) to view and interact with the ocean cleanup app
+3. Test donation, refunding, and withdrawal functionality using the pre-funded wallets. Use the wallet picker in the upper right corner to choose between different test wallets
+4. Navigate to the Devnet dashboard in the Platform to view the transactions as they are submitted and resolved on-chain
 
-Front-end değişikliklerinizi test etmek için Devnet'i yeniden başlatmanıza gerek yoktur.
+You do not need to restart Devnet to test changes to your front-end.
 
-## 🚀 Sonraki Adımlar
+## 🚀 Next Steps
 
-Ocean cleanup dApp'inizi Devnet'te kapsamlı bir şekilde test ettikten ve fonksiyonalitesinden emin olduktan sonra, Mainnet'te başlatmadan önce Stacks Testnet'te test etmeye geçebilirsiniz.
+Once you've thoroughly tested your ocean cleanup dApp in Devnet and are confident in its functionality, you can proceed to testing on the Stacks Testnet before launching on Mainnet.
 
-### 🧪 Testnet'e Geçiş
+### 🧪 Moving to Testnet
 
-1. Test STX token'ları almak için [Stacks Testnet Faucet](https://explorer.hiro.so/sandbox/faucet?chain=testnet) kullanın
-2. `.env` dosyanızdaki environment değişkenlerini güncelleyerek `NEXT_PUBLIC_CONTRACT_DEPLOYER_TESTNET_ADDRESS` ve `NEXT_PUBLIC_CONTRACT_DEPLOYER_MAINNET_ADDRESS` için değerler ekleyin. Contract'ı deploy etmeyi planladığınız STX cüzdan adresini ekleyin.
-3. Platform dashboard ve deployment planınızı kullanarak contract'larınızı Testnet'e deploy edin
-4. Gerçek ağ koşulları ve transaction süreleri ile uygulamanızı test edin
-5. [Testnet Explorer](https://explorer.hiro.so/?chain=testnet)'da contract etkileşimlerinizi doğrulayın
+1. Use the [Stacks Testnet Faucet](https://explorer.hiro.so/sandbox/faucet?chain=testnet) to get test STX tokens
+2. Update the environment variables in your `.env` file to add values for `NEXT_PUBLIC_CONTRACT_DEPLOYER_TESTNET_ADDRESS` and `NEXT_PUBLIC_CONTRACT_DEPLOYER_MAINNET_ADDRESS`. Add the STX wallet address you plan to deploy the contract with.
+3. Deploy your contracts to the Testnet using the Platform dashboard and your deployment plan
+4. Test your application with real network conditions and transaction times
+5. Verify your contract interactions in the [Testnet Explorer](https://explorer.hiro.so/?chain=testnet)
 
-### 🌊 Mainnet'te Ocean Cleanup Lansmanı
+### 🌊 Launching Ocean Cleanup on Mainnet
 
-Ocean cleanup uygulamanızı başlatmaya hazır olduğunuzda:
+When you're ready to launch your ocean cleanup app:
 
-1. Deployment ve transaction maliyetleri için gerçek STX token'larınız olduğundan emin olun
-2. Deployment konfigürasyonunuzu Mainnet'i hedefleyecek şekilde güncelleyin
-3. Contract'larınızı Platform dashboard aracılığıyla deploy edin
-4. Frontend environment değişkenlerinizi Mainnet'i işaret edecek şekilde güncelleyin
-5. Ocean cleanup uygulamanızı başlatın ve gerçek transaction'ları işlemeye başlayın!
+1. Ensure you have real STX tokens for deployment and transaction costs
+2. Update your deployment configuration to target Mainnet
+3. Deploy your contracts through the Platform dashboard
+4. Update your frontend environment variables to point to Mainnet
+5. Launch your ocean cleanup application and begin processing real transactions!
 
-**Hatırlatma:** Mainnet deployment'ları kalıcıdır ve gerçek cryptocurrency transaction'larını içerir. Mainnet'e deploy etmeden önce tüm contract kodunu ve frontend entegrasyonlarını iki kez kontrol edin.
+**Remember:** Mainnet deployments are permanent and involve real cryptocurrency transactions. Double-check all contract code and frontend integrations before deploying to Mainnet.
 
 ## 🌊 Impact Metrics & Goals
 
-### Hedeflenen Ocean Impact
-- **2.5M pound** plastik atık temizleme
-- **15 deniz türü** koruma programı
-- **500 mil** kıyı şeridi rehabilitasyonu
-- **50K kişi** toplum katılımı ve bilinçlendirme
+### Target Ocean Impact
+- **2.5M pounds** of plastic waste removal
+- **15 marine species** protection programs
+- **500 miles** of coastline rehabilitation
+- **50K people** community engagement and awareness
 
-### Teknoloji Stack
+### Technology Stack
 
-| Kategori | Teknoloji |
-|----------|-----------|
+| Category | Technology |
+|----------|------------|
 | **Blockchain** | Stacks, Clarity Smart Contracts |
 | **Frontend** | Next.js 15, React 18, TypeScript |
 | **UI/UX** | Chakra UI, Ocean Custom Theme |
@@ -270,14 +270,14 @@ Ocean cleanup uygulamanızı başlatmaya hazır olduğunuzda:
 
 **🌊 Join the Wave of Change - Save Our Oceans! 🌊**
 
-*Birlikte, blockchain teknolojisi aracılığıyla okyanus kirliliğine karşı gelgiti çevirebiliriz.*
+*Together, we can turn the tide on ocean pollution through blockchain technology.*
 
-**Proje İstatistikleri:**
-- 🎯 **Fonlama Hedefi**: $50,000 STX
-- ⏱️ **Süre**: 90 gün
-- 🌍 **Küresel Etki**: Çoklu okyanus bölgeleri
-- 💻 **Teknoloji**: Stacks Blockchain + Next.js
-- 🔒 **Güvenlik**: Clarity Smart Contracts
-- 📱 **Mobil-First**: Responsive ocean teması
+**Project Statistics:**
+- 🎯 **Funding Goal**: $50,000 STX
+- ⏱️ **Duration**: 90 days
+- 🌍 **Global Impact**: Multiple ocean regions
+- 💻 **Technology**: Stacks Blockchain + Next.js
+- 🔒 **Security**: Clarity Smart Contracts
+- 📱 **Mobile-First**: Responsive ocean theme
 
 </div>
